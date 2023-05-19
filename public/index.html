@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+    <title>Weather Application</title>
+  </head>
+  <body
+    style="
+      background-image: url(data:image/jpeg;base64,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);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 600px;
+    "
+    class="text-white
+    "
+  >
+    <div class="cotaineer text-center fw-lighter fluid d-sm-block d-lg-block">
+      <div class="section1 col-lg-6 col-sm-12 mx-auto">
+        <h4 class="fw-lighter text-white mt-5">Weather App</h4>
+        <div class="container-fluid ms-1 w-100 mt-3">
+          <input
+            type="text"
+            placeholder="Search Your location here"
+            id="Userinput"
+            oninput="gen()"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <section class="semi-text" style="font-size: 35px">
+        <h3
+          class="text-white fw-lighter"
+          id="disp"
+          style="
+            font-size: sans-serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+          "
+        ></h3>
+        <h6
+          class="fw-ligthter text-white"
+          id="local"
+          style="font-size: 30px"
+        ></h6>
+        <span id="lopo"></span>
+      </section>
+      <div class="section2">
+        <div
+          class="weather-details mt-4 fw-lighter text-white"
+          style="
+            font-size: 35px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+              'Helvetica Neue', sans-serif;
+          "
+        >
+          Weather Details
+        </div>
+        <div
+          class="text-area fw-lighter rounded-3"
+          style="
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+              'Helvetica Neue', sans-serif;
+          "
+        >
+          <ul style="list-style: none; font-size: 35px">
+            <li class="text-start">
+              Description <span id="descip" class="float-end ms-2"></span>
+            </li>
+            <li class="text-start">
+              Location <span id="locate" class="float-end"></span>
+            </li>
+            <li class="text-start">
+              Humidity <span id="humi" class="float-end"></span>
+            </li>
+            <li class="text-start">
+              Wind <span id="wid" class="float-end"></span>
+            </li>
+          </ul>
+          <hr />
+        </div>
+        <div
+          class="text-area fw-lighter rounded-3"
+          style="
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+              'Helvetica Neue', sans-serif;
+          "
+        >
+          <ul style="list-style: none; font-size: 35px">
+            <li class="text-start">
+              Min <span id="maxi" class="float-end"></span>
+            </li>
+            <li class="text-start">
+              Max <span id="mani" class="float-end"></span>
+            </li>
+            <li class="text-start">
+              Feels <span id="fall" class="float-end"></span>
+            </li>
+            <li class="text-start">
+              Pressure <span id="pressure" class="float-end"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <section class="proflie-tags" style="color: black">
+      <footer
+        class="float-end me-3 fw-lighter text-center"
+        style="
+          margin-top: 100px;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+            sans-serif;
+        "
+      >
+        Designed by
+        <a
+          href="https://www.linkedin.com/in/adebanjo-favour-217b1a251/"
+          class="text-dark"
+          >VickyWebDeveloper</a
+        >
+      </footer>
+    </section>
+    <script>
+      const gen = async () => {
+        let keyy = "8f9442cc962b60a665deb4d7dfa99529";
+        let endPoint1 = `https://api.openweathermap.org/data/2.5/weather?lat=57&lon=-2.15&appid=${keyy}`;
+        let endPoint = `https://api.openweathermap.org/data/2.5/weather?q=${Userinput.value}&appid=${keyy}&units=metric`;
+        let come = await fetch(endPoint);
+        let vic = await come.json();
+        console.log(vic);
+        let alldeydo = Math.round(vic.main.temp);
+        let loc = vic.name;
+        let col = vic.name;
+        let lup = vic.sys.country;
+        let wer = vic.weather[0].main;
+        let Humid = vic.main.humidity;
+        let kin = vic.wind.speed;
+        let min = vic.main.temp_max;
+        let nani = vic.main.temp_min;
+        let full = vic.main.feels_like;
+        let pes = vic.main.pressure;
+        let des = vic.weather[0].main;
+        console.log(alldeydo);
+        disp.innerHTML = `${alldeydo}°C`;
+        locate.innerHTML = `${loc}`;
+        humi.innerHTML = `${Humid}%`;
+        wid.innerHTML = `${kin}m/s`;
+        mani.innerHTML = `${nani}°C`;
+        lopo.innerHTML = `${wer}`;
+        local.innerHTML = `${col}, ${lup}`;
+        pressure.innerHTML = `${pes}hPa`;
+        maxi.innerHTML = `${min}°C`;
+        fall.innerHTML = `${full}°C`;
+        descip.innerHTML = `${des}`;
+      };
+    </script>
+  </body>
+</html>
